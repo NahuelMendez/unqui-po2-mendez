@@ -19,18 +19,20 @@ public class Dibujador extends JPanel {
 		
 		p = new Point(50, 60);
 		c = new Cuadrado(p, 250);
-		r = new Rectangulo(p, 65, 200);
+		r = new Rectangulo(p, 200, 65);
 		super.paintComponent(g);
 		g.drawRect(p.getX(), p.getY(), r.getAlto(), r.getAncho());
 		g.setColor(Color.BLACK);
 	}
 	
-	public static void main(String[] args) {
+	/*public static void main(String[] args) {
 		
 		Dibujador d = new Dibujador();
 		JFrame f = new JFrame();
 		f.add(d);
 		f.setSize(400, 400);
 		f.setVisible(true);
+		
 	}
+	*/
 }

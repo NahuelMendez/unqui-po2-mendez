@@ -29,7 +29,7 @@ public class EquipoDeTrabajo {
 		this.integrantes.add(p);
 	}
 	
-	public static void main(String[] args) {
+	/*public static void main(String[] args) {
 		
 		Persona2 juli = new Persona2("Juli", "Paez", 25);
 		Persona2 juan = new Persona2("Juan", "Paez", 65);
@@ -46,5 +46,5 @@ public class EquipoDeTrabajo {
 		
 		System.out.println(magios.edadPromedioDeIntegrantes());
 	}
-	
+	*/
 }
