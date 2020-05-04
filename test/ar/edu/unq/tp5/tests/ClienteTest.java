@@ -22,16 +22,16 @@ class ClienteTest {
 
 	@Test
 	void test001_empleadoPepeSinProductosTiene0CantidadDeProductos() {
-		Integer result = pepe.getProductos().size();
+		Integer result = pepe.getCobrables().size();
 		assertEquals(0, result);
 	}
 	
 	@Test
 	void test002_empleadoPepeAgrega2ProductosParaComprarYSuCantidadDeProductosEs2() {
-		pepe.agregarProducto(mesa);
-		pepe.agregarProducto(TV);
-		Integer result = pepe.getProductos().size();
+		pepe.agregarCobrable(mesa);
+		pepe.agregarCobrable(TV);
+		Integer result = pepe.getCobrables().size();
 		assertEquals(2, result);
 	}
-
+	
 }

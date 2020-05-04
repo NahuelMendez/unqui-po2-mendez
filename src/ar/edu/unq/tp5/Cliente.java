@@ -4,18 +4,28 @@ import java.util.ArrayList;
 
 public class Cliente {
 
-	private ArrayList<Producto> productos;
+	private ArrayList<Cobrable> cobrables;
+	private Integer saldoAPagar;
 	
 	public Cliente() {
-		this.productos = new ArrayList<Producto>();
+		this.cobrables = new ArrayList<Cobrable>();
+		this.saldoAPagar = 0;
 	}
 
-	public ArrayList<Producto> getProductos() {
-		return this.productos;
+	public ArrayList<Cobrable> getCobrables() {
+		return this.cobrables;
 	}
 
-	public void agregarProducto(Producto producto) {
-		this.productos.add(producto);
+	public void agregarCobrable(Cobrable cobrable) {
+		this.cobrables.add(cobrable);
+	}
+
+	public Integer getSaldoAPagar() {
+		return this.saldoAPagar;
+	}
+
+	public void setSaldoAPagar(Integer montoAPagar) {
+		this.saldoAPagar = montoAPagar;
 	}
 
 }

@@ -1,6 +1,6 @@
 package ar.edu.unq.tp5;
 
-public abstract class Producto {
+public abstract class Producto implements Cobrable{
 
 	private Integer precio;
 	private Integer stock;
@@ -22,5 +22,12 @@ public abstract class Producto {
 	
 	public void reducirStock() {
 		this.stock--;
+	}
+	
+	public void cobrarseEnCaja(Caja caja) {
+		if (this.getStock() > 0) {
+			caja.agregarMontoACobrar(this.calcularCosto());
+			this.reducirStock();
+		}
 	}
 }

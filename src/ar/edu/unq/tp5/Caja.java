@@ -13,14 +13,26 @@ public class Caja {
 	}
 
 	public void cobrarACliente(Cliente cliente) {
-		for (int i = 0; i < cliente.getProductos().size(); i++) {
-			this.registrarProducto(cliente.getProductos().get(i));
+		for (int i = 0; i < cliente.getCobrables().size(); i++) {
+			this.registrarCobrable(cliente.getCobrables().get(i));
 		}
+		informarMontoTotalAPagar(cliente);
 	}
 
-	private void registrarProducto(Producto producto) {
-		this.montoACobrar += producto.calcularCosto();
-		producto.reducirStock();
+	private void informarMontoTotalAPagar(Cliente cliente) {
+		cliente.setSaldoAPagar(this.getMontoACobrar());
+	}
+
+	private void registrarCobrable(Cobrable cobrable) {
+		cobrable.cobrarseEnCaja(this);
+	}
+
+	public void agregarMontoACobrar(Integer costoCobrable) {
+		this.montoACobrar += costoCobrable;
+	}
+
+	public void registrarPago(Factura factura) {
+		/* Se avisa a la agencia recaudadora sobre el pago de la factura */
 	}
 
 }
