@@ -32,13 +32,13 @@ class ClienteTest {
 	
 	@Test
 	void test001_clientePepeTieneComoSueldoNetoAnual360000Pesos() {
-		Integer result = pepe.calclarSueldoNetoAnual();
+		Integer result = pepe.calcularSueldoNetoAnual();
 		assertEquals(360000, result);
 	}
 	
 	@Test
 	void test002_clienteJulietaTieneComoSueldoNetoAnual240000Pesos() {
-		Integer result = juli.calclarSueldoNetoAnual();
+		Integer result = juli.calcularSueldoNetoAnual();
 		assertEquals(240000, result);
 	}
 	
