@@ -3,59 +3,52 @@ package ar.edu.unq.tp8C;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ShapeShifterComp extends ShapeShifter {
+public class ShapeShifterComp implements IShapeShifter {
 	
-	private Integer depth;
-	private List<ShapeShifter> shapeShifters;
-
-	public ShapeShifterComp(IShapeShifter shapeShifter1, IShapeShifter shapeShifter2) {
-		this.depth = shapeShifter1.deepest() + shapeShifter2.deepest();
-		shapeShifters = new ArrayList<ShapeShifter>();
-		shapeShifters.add(shapeShifter1);
-		shapeShifters.add(shapeShifter2);
-	}
-
-	private ShapeShifterComp(Integer num) {
-		this.depth = num;
+	private List<IShapeShifter> shapeShifters;
+	
+	public ShapeShifterComp() {
+		this.shapeShifters = new ArrayList<IShapeShifter>();
 	}
 
 	@Override
 	public IShapeShifter compose(IShapeShifter ishapeShifter) {
-		IShapeShifter sSComp = new ShapeShifterComp(this, ishapeShifter);
-		return sSComp;
+		ShapeShifterComp newShapeShifter = new ShapeShifterComp();
+		newShapeShifter.addShapeShifter(ishapeShifter);
+		newShapeShifter.addShapeShifter(this);
+		return newShapeShifter;
 	}
 
 	@Override
 	public Integer deepest() {
-		Integer resultado = 0;
+		Integer deepest = 1;
 		for (IShapeShifter iShapeShifter : shapeShifters) {
-			if (iShapeShifter.deepest() > resultado) {
-				resultado = iShapeShifter.deepest();
-			}
+			deepest += iShapeShifter.deepest();
 		}
-		return resultado;
+		return deepest;
 	}
 
 	@Override
 	public IShapeShifter flat() {
-		ShapeShifterComp shapeNuevo = new ShapeShifterComp(1);
-		if (this.deepest() >= 1) {
-			for (IShapeShifter iShapeShifter : shapeShifters) {
-				iShapeShifter.setDepth(1);
-			}
-			return this;
-		} else {
-			return this;
+		ShapeShifterComp newShape = new ShapeShifterComp();
+		List<Integer> values = this.values();
+		for (Integer value : values) {
+			newShape.addShapeShifter(new ShapeShifterSimple(value));
 		}
+		return newShape;
 	}
 
 	@Override
 	public List<Integer> values() {
-		// TODO Auto-generated method stub
-		return null;
+		ArrayList<Integer> values = new ArrayList<Integer>();
+		for (IShapeShifter iShapeShifter : shapeShifters) {
+			values.addAll(iShapeShifter.values());
+		}
+		return values;
 	}
 	
 	public void addShapeShifter(IShapeShifter iShapeShifter) {
-		
+		this.shapeShifters.add(iShapeShifter);
 	}
+	
 }

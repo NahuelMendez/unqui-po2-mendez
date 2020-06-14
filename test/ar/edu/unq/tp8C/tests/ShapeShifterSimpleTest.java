@@ -29,5 +29,11 @@ class ShapeShifterSimpleTest {
 		Integer valorEsperado = sSimpleB.getValue();
 		assertEquals(0, valorEsperado);
 	}
+	
+	@Test
+	void testUnShapeSimpleTieneProfundidad0() {
+		Integer result = sSimpleA.deepest();
+		assertEquals(0, result);
+	}
 
 }

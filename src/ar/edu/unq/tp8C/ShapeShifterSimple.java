@@ -3,34 +3,22 @@ package ar.edu.unq.tp8C;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ShapeShifterSimple extends ShapeShifter {
+public class ShapeShifterSimple implements IShapeShifter {
 	
 	private Integer value;
-	private Integer depth;
-
+	
 	public ShapeShifterSimple(Integer value) {
 		this.value = value;
-		this.depth = 0;
 	}
 
 	public Integer getValue() {
 		return this.value;
 	}
 	
-	private void growDepth() {
-		this.depth++;
-	}
-
-	@Override
-	public IShapeShifter compose(IShapeShifter ishapeShifter) {
-		this.growDepth();
-		ShapeShifterComp sSComp = new ShapeShifterComp(this, ishapeShifter);
-		return sSComp;
-	}
 
 	@Override
 	public Integer deepest() {
-		return this.depth;
+		return 0;
 	}
 
 	@Override
@@ -44,8 +32,13 @@ public class ShapeShifterSimple extends ShapeShifter {
 		values.add(this.getValue());
 		return values;
 	}
-	
-	public void setDepth(Integer num) {
-		this.depth = num;
+
+	@Override
+	public IShapeShifter compose(IShapeShifter ishapeShifter) {
+		ShapeShifterComp newShape = new ShapeShifterComp();
+		newShape.addShapeShifter(this);
+		newShape.addShapeShifter(ishapeShifter);
+		return newShape;
 	}
+	
 }
