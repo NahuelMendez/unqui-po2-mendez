@@ -1,4 +1,4 @@
-package ar.edu.unq.tp8O;
+package ar.edu.unq.tp8O.Publicaciones;
 
 public class TemaInteresNulo extends TemaDeInteres{
 

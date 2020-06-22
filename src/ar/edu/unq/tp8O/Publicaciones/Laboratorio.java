@@ -1,4 +1,4 @@
-package ar.edu.unq.tp8O;
+package ar.edu.unq.tp8O.Publicaciones;
 
 import java.util.ArrayList;
 import java.util.List;

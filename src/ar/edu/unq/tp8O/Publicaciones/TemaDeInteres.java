@@ -1,4 +1,4 @@
-package ar.edu.unq.tp8O;
+package ar.edu.unq.tp8O.Publicaciones;
 
 public abstract class TemaDeInteres {
 
@@ -14,7 +14,7 @@ public abstract class TemaDeInteres {
 
 	public abstract Boolean compararTemaConArticulo(Articulo articulo);
 
-	public Object getTema() {
+	public String getTema() {
 		return this.tema;
 	}
 	

@@ -6,10 +6,10 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
 
-import ar.edu.unq.tp8O.Articulo;
-import ar.edu.unq.tp8O.Laboratorio;
-import ar.edu.unq.tp8O.SistemaBibliografico;
-import ar.edu.unq.tp8O.TemaInteresTipo;
+import ar.edu.unq.tp8O.Publicaciones.Articulo;
+import ar.edu.unq.tp8O.Publicaciones.Laboratorio;
+import ar.edu.unq.tp8O.Publicaciones.SistemaBibliografico;
+import ar.edu.unq.tp8O.Publicaciones.TemaInteresTipo;
 
 import static org.mockito.Mockito.*;
 
