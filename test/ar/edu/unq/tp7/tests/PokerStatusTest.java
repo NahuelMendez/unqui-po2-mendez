@@ -5,9 +5,10 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import ar.edu.unq.tp7.Carta;
-import ar.edu.unq.tp7.Jugada;
-import ar.edu.unq.tp7.PokerStatus;
+import ar.edu.unq.tp8.Carta;
+import ar.edu.unq.tp8.Jugada;
+import ar.edu.unq.tp8.PokerStatus;
+
 import static org.mockito.Mockito.*;
 
 class PokerStatusTest {

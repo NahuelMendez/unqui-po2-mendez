@@ -7,8 +7,9 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.BeforeEach;
 import org.mockito.Mock;
 
-import ar.edu.unq.tp9.ReproductorMP3.Reproductor;
-import ar.edu.unq.tp9.ReproductorMP3.Song;
+import ar.edu.unq.tp10.ReproductorMP3.Reproductor;
+import ar.edu.unq.tp10.ReproductorMP3.Song;
+
 import static org.mockito.Mockito.*;
 
 public class ReproductorTest {

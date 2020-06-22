@@ -7,9 +7,9 @@ import java.util.List;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import ar.edu.unq.tp8O.EncuentrosDeportivos.GestorDeportivo;
-import ar.edu.unq.tp8O.EncuentrosDeportivos.Partido;
-import ar.edu.unq.tp8O.EncuentrosDeportivos.ServidorDeportivo;
+import ar.edu.unq.tp9O.EncuentrosDeportivos.GestorDeportivo;
+import ar.edu.unq.tp9O.EncuentrosDeportivos.Partido;
+import ar.edu.unq.tp9O.EncuentrosDeportivos.ServidorDeportivo;
 
 class GestorDeportivoTest {
 	

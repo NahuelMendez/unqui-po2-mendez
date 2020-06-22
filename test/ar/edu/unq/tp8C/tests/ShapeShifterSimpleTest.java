@@ -5,7 +5,7 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import ar.edu.unq.tp8C.ShapeShifterSimple;
+import ar.edu.unq.tp9C.ShapeShifterSimple;
 
 class ShapeShifterSimpleTest {
 	

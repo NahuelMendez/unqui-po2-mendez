@@ -5,12 +5,12 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import ar.edu.unq.tp9.Encriptador.DesencriptarConNumeros;
-import ar.edu.unq.tp9.Encriptador.DesencriptarPorVocales;
-import ar.edu.unq.tp9.Encriptador.EncriptadorNaive;
-import ar.edu.unq.tp9.Encriptador.EncriptarConNumeros;
-import ar.edu.unq.tp9.Encriptador.EncriptarPorVocales;
-import ar.edu.unq.tp9.Encriptador.IEstrategiaDeDesencriptacion;
+import ar.edu.unq.tp10.Encriptador.DesencriptarConNumeros;
+import ar.edu.unq.tp10.Encriptador.DesencriptarPorVocales;
+import ar.edu.unq.tp10.Encriptador.EncriptadorNaive;
+import ar.edu.unq.tp10.Encriptador.EncriptarConNumeros;
+import ar.edu.unq.tp10.Encriptador.EncriptarPorVocales;
+import ar.edu.unq.tp10.Encriptador.IEstrategiaDeDesencriptacion;
 
 class EncriptadorNaiveTest {
 	

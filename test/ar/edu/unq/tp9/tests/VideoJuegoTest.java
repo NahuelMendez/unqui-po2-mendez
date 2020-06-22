@@ -5,7 +5,7 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import ar.edu.unq.tp9.Videojuego.VideoJuego;
+import ar.edu.unq.tp10.Videojuego.VideoJuego;
 
 class VideoJuegoTest {
 	

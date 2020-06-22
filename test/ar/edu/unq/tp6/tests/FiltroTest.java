@@ -5,6 +5,14 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
+
+import ar.edu.unq.tp7.ElementosSimilares.Filtro;
+import ar.edu.unq.tp7.ElementosSimilares.FiltroLinkEnComun;
+import ar.edu.unq.tp7.ElementosSimilares.FiltroMismaLetraInicial;
+import ar.edu.unq.tp7.ElementosSimilares.FiltroPropiedadEnComun;
+import ar.edu.unq.tp7.ElementosSimilares.Page;
+import ar.edu.unq.tp7.ElementosSimilares.WikipediaPage;
+
 import static org.mockito.Mockito.*;
 
 import java.util.ArrayList;
@@ -12,13 +20,6 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
-import ar.edu.unq.tp6.ElementosSimilares.Filtro;
-import ar.edu.unq.tp6.ElementosSimilares.FiltroLinkEnComun;
-import ar.edu.unq.tp6.ElementosSimilares.FiltroMismaLetraInicial;
-import ar.edu.unq.tp6.ElementosSimilares.FiltroPropiedadEnComun;
-import ar.edu.unq.tp6.ElementosSimilares.Page;
-import ar.edu.unq.tp6.ElementosSimilares.WikipediaPage;
 
 class FiltroTest {
 	

@@ -8,8 +8,8 @@ import java.util.List;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import ar.edu.unq.tp8C.IShapeShifter;
-import ar.edu.unq.tp8C.ShapeShifterSimple;
+import ar.edu.unq.tp9C.IShapeShifter;
+import ar.edu.unq.tp9C.ShapeShifterSimple;
 
 class ShapeShifterCompuestoTest {
 	

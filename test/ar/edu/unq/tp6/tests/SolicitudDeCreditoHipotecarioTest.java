@@ -5,9 +5,9 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import ar.edu.unq.tp6.SueldosRecagardo.Cliente;
-import ar.edu.unq.tp6.SueldosRecagardo.PropiedadInmobiliaria;
-import ar.edu.unq.tp6.SueldosRecagardo.SolicitudDeCreditoHipotecario;
+import ar.edu.unq.tp7.SueldosRecagardo.Cliente;
+import ar.edu.unq.tp7.SueldosRecagardo.PropiedadInmobiliaria;
+import ar.edu.unq.tp7.SueldosRecagardo.SolicitudDeCreditoHipotecario;
 
 class SolicitudDeCreditoHipotecarioTest {
 	
