@@ -1,4 +1,4 @@
-package ar.edu.unq.tp6;
+package ar.edu.unq.tp6.SueldosRecagardo;
 
 public class PropiedadInmobiliaria {
 	
