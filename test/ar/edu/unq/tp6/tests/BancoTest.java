@@ -5,11 +5,11 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import ar.edu.unq.tp7.SueldosRecagardo.Banco;
-import ar.edu.unq.tp7.SueldosRecagardo.Cliente;
-import ar.edu.unq.tp7.SueldosRecagardo.PropiedadInmobiliaria;
-import ar.edu.unq.tp7.SueldosRecagardo.SolicitudDeCreditoHipotecario;
-import ar.edu.unq.tp7.SueldosRecagardo.SolicitudDeCreditoPersonal;
+import ar.edu.unq.tp6.bancoYPrestamos.Banco;
+import ar.edu.unq.tp6.bancoYPrestamos.Cliente;
+import ar.edu.unq.tp6.bancoYPrestamos.PropiedadInmobiliaria;
+import ar.edu.unq.tp6.bancoYPrestamos.SolicitudDeCreditoHipotecario;
+import ar.edu.unq.tp6.bancoYPrestamos.SolicitudDeCreditoPersonal;
 
 class BancoTest {
 	

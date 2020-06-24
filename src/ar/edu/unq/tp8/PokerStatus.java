@@ -1,16 +1,14 @@
 package ar.edu.unq.tp8;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class PokerStatus {
 	
 	public Boolean verificarPoker(Carta carta1, Carta carta2, Carta carta3, Carta carta4, Carta carta5) {
 		ArrayList<Carta> cartas = this.crearMano(carta1, carta2, carta3, carta4, carta5);
-		Boolean resultado = false;
-		for (Carta carta : cartas) {
-			resultado = resultado || this.hayPokerDe(carta, cartas);
-		} 
-		return resultado; 
+		return cartas.stream()
+				.anyMatch(x -> this.hayPokerDe(x, cartas));
 	}
 	
 	public String verificar(Carta carta1, Carta carta2, Carta carta3, Carta carta4, Carta carta5) {
@@ -27,63 +25,39 @@ public class PokerStatus {
 		
 		
 	public Boolean verificarTrio(Carta carta1, Carta carta2, Carta carta3, Carta carta4, Carta carta5) {
-		Boolean resultado = false;
 		ArrayList<Carta> cartas = this.crearMano(carta1, carta2, carta3, carta4, carta5);
-		for (Carta carta : cartas) {
-			resultado = resultado || this.hayTrio(carta, cartas);
-		}
-		return resultado;
+		return cartas.stream().anyMatch(x -> this.hayTrio(x, cartas));
 	}
 	
 	public Boolean verificarColor(Carta carta1, Carta carta2, Carta carta3, Carta carta4, Carta carta5) {
-		Boolean resultado = false;
 		ArrayList<Carta> cartas = this.crearMano(carta1, carta2, carta3, carta4, carta5);
-		for (Carta carta : cartas) {
-			resultado = resultado || this.hayColor(carta, cartas);
-		}
-		return resultado;
+		return cartas.stream().anyMatch(x -> this.hayColor(x, cartas));
 	}
 
 
 	private Boolean hayColor(Carta numeroCarta, ArrayList<Carta> cartas) {
-		Integer contador = 0;
-		for (Carta carta: cartas) {
-			if (carta.getPalo().equals(numeroCarta.getPalo())) {
-				contador++;
-			}
-		}
-		return contador == 5;
+		return cartas.stream()
+				.filter(x -> x.getPalo().equals(numeroCarta.getPalo()))
+				.count() == 5;
 	}
 
 	private Boolean hayTrio(Carta numeroCarta, ArrayList<Carta> cartas) {
-		Integer contador = 0;
-		for (Carta carta: cartas) {
-			if (this.numCarta(carta) == (this.numCarta(numeroCarta))) {
-				contador++;
-			}
-		}
-		return contador == 3;
+		return cartas.stream()
+			   .filter(x -> this.numCarta(x) == this.numCarta(numeroCarta))
+			   .count() == 3;
 	}
 
 	private ArrayList<Carta> crearMano(Carta carta1, Carta carta2, Carta carta3, Carta carta4, Carta carta5) {
-		ArrayList<Carta> cartas = new ArrayList<Carta>();
-		cartas.add(carta1);
-		cartas.add(carta2);
-		cartas.add(carta3);
-		cartas.add(carta4);
-		cartas.add(carta5);
+		ArrayList<Carta> cartas = new ArrayList<Carta>
+		(Arrays.asList(carta1, carta2, carta3, carta4, carta5)); 
 		return cartas;
 	}
 
 
 	public Boolean hayPokerDe(Carta numeroCarta, ArrayList<Carta> cartas) {
-		Integer contador = 0;
-		for (Carta carta: cartas) {
-			if (this.numCarta(carta) == (this.numCarta(numeroCarta))) {
-				contador++;
-			}
-		}
-		return contador == 4;
+		return cartas.stream()
+				   .filter(x -> this.numCarta(x) == this.numCarta(numeroCarta))
+				   .count() == 4;
 	}
 
 	public Jugada jugadaGanadoraContra(Jugada jugada1, Jugada jugada2) {
@@ -107,11 +81,9 @@ public class PokerStatus {
 	}
 
 	private Integer getValorNumericoTotal(ArrayList<Carta> cartas) {
-		Integer resultado = 0;
-		for (Carta carta : cartas) {
-			resultado += carta.getValorNumerico();
-		}
-		return resultado;
+		return cartas.stream()
+				.mapToInt(Carta::getValorNumerico)
+				.sum();
 	}
 
 	private Jugada ganadorEntre(Jugada jugada1, Jugada jugada2) {
