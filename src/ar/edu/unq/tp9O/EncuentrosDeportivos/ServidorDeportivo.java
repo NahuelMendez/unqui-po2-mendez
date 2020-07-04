@@ -15,16 +15,14 @@ public class ServidorDeportivo implements IObserver{
 		this.partidosRecibidos = new HashSet<Partido>();
 	}
 	
-	public void suscribirseAGestorDeportivo(GestorDeportivo gestor, String aspecto) {
-		gestor.agregarObserver(this, aspecto);
-		this.intereses.add(aspecto);
+	public void suscribirseAGestorDeportivo(GestorDePartidos gestor, Set<String> aspectosDeInteres) {
+		gestor.agregarObserver(this, aspectosDeInteres);
+		this.intereses.addAll(aspectosDeInteres);
 	}
 	
 	@Override
-	public void update(Partido partido, String aspecto) {
-		if (this.intereses.contains(aspecto)) {
-			agregarPartido(partido);
-		}
+	public void update(Partido partido) {
+		agregarPartido(partido);
 	}
 
 	private void agregarPartido(Partido partido) {

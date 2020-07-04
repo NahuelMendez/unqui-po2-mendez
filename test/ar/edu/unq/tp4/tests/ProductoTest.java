@@ -3,7 +3,7 @@ package ar.edu.unq.tp4.tests;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import ar.edu.unq.tp4.Producto;
+import ar.edu.unq.tp4.ejercicio1.Producto;
 
 import static org.junit.jupiter.api.Assertions.*;
 

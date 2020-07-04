@@ -1,7 +1,6 @@
 package ar.edu.unq.tp9O.EncuentrosDeportivos;
 
 import java.util.List;
-import java.util.Set;
 
 public class Partido {
 	
@@ -24,7 +23,7 @@ public class Partido {
 		return this.deporte;
 	}
 	
-	private String getResultado() {
+	public String getResultado() {
 		return this.resultado;
 	}
 

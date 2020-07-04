@@ -35,8 +35,8 @@ public class Participante implements IParticipante {
 	}
 	
 	public void unirseAPartida(ServidorDeJuego servidor) throws Exception {
-		this.servidor = servidor;
 		this.servidor.agregarParticipante(this);
+		this.servidor = servidor;
 	}
 
 	public void pasarASiguientePregunta() {

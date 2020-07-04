@@ -1,6 +1,6 @@
 package ar.edu.unq.tp11.Cuenta.Cuenta.test.cuenta;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.Test;
 import org.mockito.Mockito;
@@ -20,15 +20,15 @@ public class CajaAhorroTest {
 		
 		cajaAhorro.extraer(90);
 		assertEquals(10, cajaAhorro.getSaldo());
-		Mockito.verify(historialMovimientos).registrarMovimiento("ExtracciÃ³n", 90);
+		Mockito.verify(historialMovimientos).registrarMovimiento("Extracción", 90);
 		
 		cajaAhorro.extraer(10);
 		assertEquals(0, cajaAhorro.getSaldo());
-		Mockito.verify(historialMovimientos).registrarMovimiento("ExtracciÃ³n", 10);
+		Mockito.verify(historialMovimientos).registrarMovimiento("Extracción", 10);
 		
 		cajaAhorro.extraer(1);
 		assertEquals(0, cajaAhorro.getSaldo());
-		Mockito.verify(historialMovimientos, Mockito.never()).registrarMovimiento("ExtracciÃ³n", 1);
+		Mockito.verify(historialMovimientos, Mockito.never()).registrarMovimiento("Extracción", 1);
 		
 		Mockito.verify(notificador, Mockito.times(2)).notificarNuevoSaldoACliente(cajaAhorro);
 	}

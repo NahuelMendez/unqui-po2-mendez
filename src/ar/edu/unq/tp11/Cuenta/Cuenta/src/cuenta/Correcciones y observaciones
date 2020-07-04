@@ -1,0 +1,28 @@
+Bad smells del ejercicio caja de ahorro
+
+	♦ El primer bad smell que identifico es el codigo repetido en las subclases
+	de cuenta bancaria, ambas implementan esto 
+	
+	CuentaCorriente
+		public void extraer(Integer monto) {
+		if(this.saldo + this.limiteDescubierto >= monto)
+			this.saldo = saldo - monto;  <---
+			this.historialDeMovimientos.registrarMovimiento("ExtracciÃ³n", monto); <---
+			this.notificador.notificarNuevoSaldoACliente(this);  <---
+	}
+	
+	CajaDeAhorro
+		public void extraer(Integer monto) {
+		if(this.saldo >= monto) {
+			this.saldo = saldo - monto;  <---
+			this.historialDeMovimientos.registrarMovimiento("ExtracciÃ³n", monto); <---
+			this.notificador.notificarNuevoSaldoACliente(this);  <---
+		}
+	}
+		
+	El refactoring que voy a aplicar va a ser un template method, por lo que subo a la superClase
+	el algoritmo esqueleto o base y que las subclases redefinan los metodos necesarios para su
+	comportamiento 
+	
+	♦ El siguiente refactor va a ser cambiar las variables de instancia tanto de CuentaBancaria como CuentaCorriente
+	por privadas, y en el caso de saldo usar el metodo getter.

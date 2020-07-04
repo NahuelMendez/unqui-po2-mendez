@@ -1,0 +1,23 @@
+Ejercicios de lectura - TP Interfaces
+
+	1 - Permite darle un tipo a un conjunto de clases que no necesariamente esten relacionadas
+	entre si, y las hace polimorficas a un protocolo en comun que esta declarado en la interface.
+	
+	2 - No siempre se puede agrupar en clases abstractas ya que al crear una para tener una jerarquia
+	y clases concretas polimorficas puede suceder que estas no tengan relacion como para generar una abstraccion
+	en una super clase, tambien puede ocurrir que no queremos tener comportamiento en clases que no le interesen
+	conocer esos mensajes.
+	
+	3 - Las ventajas que tienen las clases abstractas sobre las interfaces es que las clases abstractas tienen
+	campos (variables de instancia) que determinan el estado de un objeto y con ella podememos instanciarlos,
+	con una inteface no. 
+	
+	4 - No se puede instanciar una interface, actuan como clases pero no lo son. Si se pueden extender
+	
+	5 - No es recomendable porque el protocolo de una interface es un contrato que se debe cumplir, de cambiar
+	o agregarle metodos a una interface se esta cambiando el contrato que las clases que la implementan deben
+	cumplir, por lo que inmediatamente esas clases dejan de compilar.
+	
+	6 - Como Smalltalk es un lenguaje dinamicamente tipado, es decir no se especifican los tipos al recibir o
+	interactuar con objetos, no hace falta tener interfaces. El protocolo que cumplen las clases queda como "una 
+	interface" implicita y puede funcionar con cualquiera que lo respete.

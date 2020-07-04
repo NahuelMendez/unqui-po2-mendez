@@ -1,4 +1,4 @@
-package ar.edu.unq.tp4;
+package ar.edu.unq.tp4.ejercicio2;
 
 public class Ingreso {
 

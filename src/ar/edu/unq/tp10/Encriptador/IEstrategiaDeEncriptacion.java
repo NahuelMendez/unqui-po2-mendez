@@ -4,4 +4,6 @@ public interface IEstrategiaDeEncriptacion {
 	
 	public String encriptar(String word);
 
+	public String desencriptar(String word);
+
 }

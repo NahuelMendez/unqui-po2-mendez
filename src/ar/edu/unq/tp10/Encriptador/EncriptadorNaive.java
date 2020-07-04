@@ -2,28 +2,22 @@ package ar.edu.unq.tp10.Encriptador;
 
 public class EncriptadorNaive {
 
-	private IEstrategiaDeEncriptacion estrategiaE;
-	private IEstrategiaDeDesencriptacion estrategiaD;
+	private IEstrategiaDeEncriptacion estrategia;
 	
-	public EncriptadorNaive(IEstrategiaDeEncriptacion estrategiaE, IEstrategiaDeDesencriptacion estrategiaD) {
-		this.estrategiaE = estrategiaE;
-		this.estrategiaD = estrategiaD;
+	public EncriptadorNaive(IEstrategiaDeEncriptacion estrategia) {
+		this.estrategia = estrategia;
 	}
 	
-	public void setEstrategiaDeEncriptacion(IEstrategiaDeEncriptacion estrategiaE) {
-		this.estrategiaE = estrategiaE;
-	}
-	
-	public void setEstrategiaDeDesencriptacion(IEstrategiaDeDesencriptacion estrategiaD) {
-		this.estrategiaD = estrategiaD;
+	public void setEstrategiaDeEncriptacion(IEstrategiaDeEncriptacion estrategia) {
+		this.estrategia = estrategia;
 	}
 	
 	public String encriptar(String word) {
-		return estrategiaE.encriptar(word);
+		return estrategia.encriptar(word);
 	}
 
 	public String desencriptar(String word) {
-		return this.estrategiaD.desencriptar(word);
+		return this.estrategia.desencriptar(word);
 	}
 
 }

@@ -5,7 +5,7 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import ar.edu.unq.tp5.ProductoCooperativa;
+import ar.edu.unq.tp5.laCajaDelMercadoCentral.ProductoCooperativa;
 
 class ProductoCooperativaTest {
 	

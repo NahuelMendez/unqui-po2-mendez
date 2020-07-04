@@ -5,12 +5,12 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import ar.edu.unq.tp5.Caja;
-import ar.edu.unq.tp5.Cliente;
-import ar.edu.unq.tp5.Impuesto;
-import ar.edu.unq.tp5.ProductoCooperativa;
-import ar.edu.unq.tp5.ProductoTradicional;
-import ar.edu.unq.tp5.Servicio;
+import ar.edu.unq.tp5.laCajaDelMercadoCentral.Caja;
+import ar.edu.unq.tp5.laCajaDelMercadoCentral.Cliente;
+import ar.edu.unq.tp5.laCajaDelMercadoCentral.Impuesto;
+import ar.edu.unq.tp5.laCajaDelMercadoCentral.ProductoCooperativa;
+import ar.edu.unq.tp5.laCajaDelMercadoCentral.ProductoTradicional;
+import ar.edu.unq.tp5.laCajaDelMercadoCentral.Servicio;
 
 class CajaTest {
 	

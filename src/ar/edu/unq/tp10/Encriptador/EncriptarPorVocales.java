@@ -9,5 +9,14 @@ public class EncriptarPorVocales implements IEstrategiaDeEncriptacion{
 				.replace("e", "i").replace("a", "e");
 		return word;
 	}
+	
+	@Override
+	public String desencriptar(String word) {
+		word = word.replace("e", "a").replace("i", "e")
+				.replace("o", "i")
+				.replace("u", "o").replace("u", "a");
+		return word;
+	}
+
 
 }

@@ -21,7 +21,22 @@ public class Vehiculo {
 		return fechaFabricacion;
 	}
 
-	public String ciudadRadicacion() {
+	public String getCiudadRadicacion() {
 		return ciudadRadicacion;
 	}
+	
+	public Boolean puedeAplicarParaVtv(LocalDate fecha) {
+		return this.tieneAntiguedadMayorAUnAño(fecha) &&
+				this.elVehiculoEsDeBuenosAires();
+	}
+	
+	private Boolean tieneAntiguedadMayorAUnAño(LocalDate fecha) {
+		return fecha.minusYears(1).isAfter(this.getFechaFabricacion());
+	}
+	
+	private Boolean elVehiculoEsDeBuenosAires() {
+		return this.getCiudadRadicacion().equalsIgnoreCase("Buenos Aires");
+	}
 }
+
+

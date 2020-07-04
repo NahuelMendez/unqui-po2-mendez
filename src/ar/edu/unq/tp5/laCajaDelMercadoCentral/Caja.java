@@ -1,4 +1,4 @@
-package ar.edu.unq.tp5;
+package ar.edu.unq.tp5.laCajaDelMercadoCentral;
 
 public class Caja {
 	

@@ -5,7 +5,7 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import ar.edu.unq.tp4.IngresoHorasExtra;
+import ar.edu.unq.tp4.ejercicio2.IngresoHorasExtra;
 
 class IngresoHorasExtraTests {
 	

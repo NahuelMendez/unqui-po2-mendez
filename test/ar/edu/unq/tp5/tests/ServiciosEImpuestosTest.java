@@ -5,8 +5,8 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import ar.edu.unq.tp5.Impuesto;
-import ar.edu.unq.tp5.Servicio;
+import ar.edu.unq.tp5.laCajaDelMercadoCentral.Impuesto;
+import ar.edu.unq.tp5.laCajaDelMercadoCentral.Servicio;
 
 class ServiciosEImpuestosTest {
 	

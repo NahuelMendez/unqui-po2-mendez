@@ -1,4 +1,4 @@
-package ar.edu.unq.tp4;
+package ar.edu.unq.tp4.ejercicio1;
 
 import java.util.function.BooleanSupplier;
 
@@ -20,7 +20,7 @@ public class Producto {
 		this.precioCuidado = false;
 	}
 
-	public Object getNombre() {
+	public String getNombre() {
 		return this.nombre;
 	}
 

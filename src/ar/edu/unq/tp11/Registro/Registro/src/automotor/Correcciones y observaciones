@@ -1,0 +1,26 @@
+Correcciones y observaciones
+
+	Bad Smells
+	♦ El primer bad smell que detecto es la envidia de atributos que tiene lugar en la clase
+	registro automotor, esta dependiendo de muchos atributos de la clase Vehiculo. 
+	
+	LocalDate fechaFabricacion = vehiculo.getFechaFabricacion();
+		Boolean esVehiculoPolicial = vehiculo.esVehiculoPolicial();
+		String ciudadRadicacion = vehiculo.ciudadRadicacion();
+		
+		dentro del return tambien se le estan pidiendo demasiados datos a Vehiculo
+		
+	esto es un indicio de que hay un comportamiento que se esta escapando de la clase Vehiculo que deberia
+	estar implementada ahi
+	
+	♦ El codigo esta comentado, segun el libro de Martin Fowler hay un bad smell llamado Comments, en este caso
+	es aplicacble porque esta queriendo explicar como funciona el return
+	
+	solucion: 
+		definir un mensaje en la clase Vehiculo de tal manera que RegistroAutomotor no dependa de tantos 
+		atributos externos.
+		
+	♦ Se utilizo move method a la clase vehiculo para responder si ya paso un año de la fabricacion y si
+	es de la ciudad de Buenos Aires. Con esto evitamos la envidia de atributos y encapsulamos un comportamiento
+	en vehiculo que antes no estaba contemplado
+	
