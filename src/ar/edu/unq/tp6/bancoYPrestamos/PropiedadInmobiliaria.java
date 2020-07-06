@@ -18,4 +18,12 @@ public class PropiedadInmobiliaria {
 		return valorFiscal;
 	}
 	
+	public String getDescripcion() {
+		return this.descripcion;
+	}
+	
+	public String getDireccion() {
+		return this.direccion;
+	}
+	
 }

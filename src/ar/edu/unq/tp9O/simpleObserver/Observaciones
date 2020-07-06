@@ -1,0 +1,7 @@
+Observaciones
+
+	Ventajas: El observer esta interesado en un cambio especifico del subject, esto es una ventaja con una pequeña cantidad de observers.
+	
+	Desventajas: El observer recibe como parametro al sujeto y un objeto, es mucha informacion si solo quisiera saber la temperatura del sujeto. Se podria optimizar
+	la forma en la que el observer obtiene el dato deseado. Como el observer recibe al observable como parametro en el constructor, no hace falta que tambien lo reciba en 
+	el metodo update.

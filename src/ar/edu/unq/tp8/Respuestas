@@ -1,0 +1,83 @@
+- 1) ¿Qué son los test doubles?
+	
+	♦ Son objetos que simulan ser instancias de clases que podemos programar para que actuen como necesitamos
+	en nuestros test. En el contexto que queremos testear nuestro SUT podemos hacer que sus dependencias asi como
+	el DOC en general sean test doubles para poder abstraernos de esas dependencias. La gran ventaja de usar
+	test doubles es que logramos tener clases desacopladas y testeamos solamente el comportamiento del SUT aislando
+	el codigo. Tambien mejora la velocidad de los test y ayuda a idear escenarios de testeo de mayor complejidad.
+	
+
+- 2) Enumere los tipos de test doubles y de ejemplos concretos de uso. Indique como usaría, cuando es posible,
+  mockito para emular los diferentes tipos de tipos de test doubles.
+
+	♦ Dummy Object: este se utiliza para ocupar un lugar y no le programamos ningun comportamiento
+	
+		- Un caso concreto de uso seria un banco que tiene clientes y cuando testiemos el comportamiento del banco
+		supongamos que tiene un metodo para contar clientes. Siendo la clase Banco el sut de nuestro test utilizariamos
+		dummy object de la siguiente manera
+		
+		public void test_unBancoTiene1Cliente() {
+			Banco banco = new Banco();
+			Cliente cliente = mock(Cliente.class);
+			banco.agregarCliente(cliente);
+			Integer cantidadDeClientes = banco.cantidadDeClientes();
+			assertEquals(1, cantidadDeClientes); 
+		}
+		
+	♦ Test Stub: se usan para proveer al sut de inputs indirectos. Podemos clasificarlos en responder y saboteur
+	
+		- El uso concreto de un responder es el que nos provee un input indirecto que deseamos para que nuestro 
+		Sut pueda ejecutar su comportamiento. Supongamos que un una red social tiene una lista de usuarios en un grupo
+		y una clase Usuario que sera el sut quiere obtener aquellos que sean sus amigos para enviarles un mensaje
+		
+		public void test_UnUsuarioLeEnviaUnMensajeALosAmigosQueEstanDentroDelGrupo1() {
+			Usuario usuario = new Usuario();
+			GrupoSocial grupo = mock(GrupoSocial);
+			when(grupo.getListaDeAmigosDeUsuario(usuario)).thenReturn(List.of("Maria", "Juan"));
+			Integer result = usuario.cantidadDeAmigosDelGrupo(grupo);
+			assertEquals(2, result);
+		}
+
+		- El Test Stub saboteur es aquel que usamos cuando queremos lanzar una excepcion. Queremos "romper" el funcionamiento
+		del sut. Nos ayuda a plantear casos concretos y dificiles de alcanzar.
+		Un caso concreto seria un auto que delega el metodo acelerar en su motor y que cuando lo haga incremente
+		su velocidad, pero usaremos un saboteur para simular que el motor no funciona y lanza una exception.
+		
+		public void test_UnAutoNoPuedeAcelerarYaQueElMotorLanzaUnaExcepcion() throws Exception {
+			Motor motor = mock(Motor.class);
+			Auto auto = new Auto(motor);
+			when(motor.acelerar()).thenThrows(new Exception("El motor es descompuesto"));
+			assertThrows(Exception.class, () -> auto.acelerar());
+		}
+		
+	♦ Spy : El doble spy es aquel que se encarga de ser receptor de un mensaje que envia el Sut, podemos usarlo en el test verificando 
+			dicha interaccion. Se utiliza para los outputs indirectos	
+			
+			
+		- Un caso de uso concreto puede ser el de un patron observer, donde el sujeto cambia su estado y le envia a una dependencia (o varias)
+		el mensaje update. Si tenemos como sut al sujeto podemos usar Spy para verificar que se envio el mensaje update a sus observadores.
+		
+		public void test_UnObservableCambiaDeEstadoYNotificaASusObservers() {
+			Observable subject = new Observable();
+			IObserver observer = mock(Observer.class);
+			subject.addObserver(observer);
+			subject.setState();
+			verify(observer).update();
+		}
+				
+		
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+ 

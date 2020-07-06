@@ -1,0 +1,7 @@
+Observaciones
+
+	Ventajas del modelo: como la responsabilidad de obtener aquel estado que cambio del sujeto recae en los observers, el sujeto puede tener una gran cantidad
+	de observadores sin suponer ninguna desventaja en ello, al contrario del push model. El sujeto no conoce nada a cerca de sus observaores y tiene mas de un caso de notificacion.
+	
+	Desventajas: puede que los observadores reciban notificaciones que no le interesen. Dado que los observers concretos reciben al observable en el constructor, no es necesario
+	que en el metodo update el observable se pase como parametro.

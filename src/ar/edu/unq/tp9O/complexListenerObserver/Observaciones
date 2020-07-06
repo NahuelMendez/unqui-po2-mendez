@@ -1,0 +1,7 @@
+Observaciones
+
+	Ventajas: La ventaja principal que pude notar es que El observable se pasa como parametro a los observers. Esto hace que los observers puedan observar a varios observables
+	y dado que reciben a un observable en sus metodos de la interface SensorListener pueden examinar a dicho observable y saber cual de los que observa cambio.
+	
+	Desventajas: Dado a que la interface tiene un protocolo especifico que deben respetar las clases que lo implementen, por lo que limitaria a los observables a algo
+	no tan abstracto.

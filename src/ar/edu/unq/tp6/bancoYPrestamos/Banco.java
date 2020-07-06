@@ -1,18 +1,21 @@
 package ar.edu.unq.tp6.bancoYPrestamos;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Banco {
 	
-	private ArrayList<Cliente> clientes;
-	private ArrayList<SolicitudDeCredito> solicitudesPendientes;
+	private List<Cliente> clientes;
+	private List<SolicitudDeCredito> solicitudesPendientes;
+	private List<SolicitudDeCredito> solicitudesDeCreditoAprobadas;
 	
 	public Banco() {
 		this.clientes = new ArrayList<Cliente>();
 		this.solicitudesPendientes = new ArrayList<SolicitudDeCredito>();
+		this.solicitudesDeCreditoAprobadas = new ArrayList<SolicitudDeCredito>();
 	}
 
-	public ArrayList<Cliente> getClientes() {
+	public List<Cliente> getClientes() {
 		return this.clientes;
 	}
 
@@ -20,7 +23,7 @@ public class Banco {
 		this.clientes.add(cliente);
 	}
 
-	public ArrayList<SolicitudDeCredito> getSolicitudesPendientes() {
+	public List<SolicitudDeCredito> getSolicitudesPendientes() {
 		return this.solicitudesPendientes;
 	}
 
@@ -31,6 +34,7 @@ public class Banco {
 	public void evaluarSoliticudDeCredito(SolicitudDeCredito solicitudDeCredito) {
 		if (solicitudDeCredito.chequearAprobacion()) {
 			this.otorgarCreditoACliente(solicitudDeCredito.getCliente());
+			this.solicitudesDeCreditoAprobadas.add(solicitudDeCredito);
 		} 
 	}
 
@@ -51,6 +55,11 @@ public class Banco {
 		
 	}
 
-	
+	public Integer getMontoTotalADesembolsar() {
+		return this.solicitudesDeCreditoAprobadas
+				.stream()
+				.mapToInt(SolicitudDeCredito::getMonto)
+				.sum();	
+	}
 
 }

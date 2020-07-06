@@ -54,5 +54,17 @@ public class Cliente {
 	public void setCreditoObtenido(Integer monto) {
 		this.creditoObtenido = monto;
 	}
+	
+	public String getNombre() {
+		return this.nombre;
+	}
+
+	public String getApellido() {
+		return this.apellido;
+	}
+	
+	public String getDireccion() {
+		return this.direccion;
+	}
 
 }

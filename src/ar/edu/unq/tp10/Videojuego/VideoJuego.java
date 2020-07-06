@@ -36,4 +36,7 @@ public class VideoJuego {
 		this.fichas--;
 	}
 
+	public void terminoElJuego() {
+		this.setEstadoDeJuego(new EstadoSinFichas());
+	}
 }

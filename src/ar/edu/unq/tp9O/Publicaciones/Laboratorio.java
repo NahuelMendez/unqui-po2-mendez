@@ -2,12 +2,12 @@ package ar.edu.unq.tp9O.Publicaciones;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
-public class Laboratorio implements IObserver{
+public class Laboratorio implements ISuscriptor{
 	
-	private List<Articulo> articulosRecibidos;
+	private List<String> notificaciones;
 	private SistemaBibliografico sistema;
-	private TemaDeInteres temaDeInteres;
 	
 	public void cargarArticulo(Articulo articulo) {
 		this.sistema.agregarArticulo(articulo);
@@ -15,32 +15,19 @@ public class Laboratorio implements IObserver{
 
 	public Laboratorio(SistemaBibliografico sistema) {
 		this.sistema = sistema;
-		articulosRecibidos = new ArrayList<Articulo>();
-		this.temaDeInteres = new TemaInteresNulo("Ninguno");
+		this.notificaciones = new ArrayList<String>();
 	}
 	
-	public void suscribirseAlSistema(TemaDeInteres temaDeInteres) {
-		this.sistema.agregarObserver(this, temaDeInteres);
+	public void suscribirseAlSistema(Set<String> temaDeInteres) {
+		this.sistema.agregarSuscriptor(this, temaDeInteres);
 	}
 	
 	@Override
-	public void update(Articulo articulo) {
-		if(this.temaDeInteres.compararTemaConArticulo(articulo)) {
-			this.agregarArticuloDeInteres(articulo);
-		}
-	}
-	
-	private void agregarArticuloDeInteres(Articulo articulo) {
-		this.articulosRecibidos.add(articulo);
+	public void update(String notificacion) {
+		this.notificaciones.add(notificacion);
 	}
 
-	@Override
-	public void setTemaDeInteres(TemaDeInteres temaDeInteres) {
-		this.temaDeInteres = temaDeInteres;
-		
-	}
-
-	public List<Articulo> getArticulosRecibidos() {
-		return this.articulosRecibidos;
+	public List<String> getNotificacionesRecibidas() {
+		return this.notificaciones;
 	}
 }

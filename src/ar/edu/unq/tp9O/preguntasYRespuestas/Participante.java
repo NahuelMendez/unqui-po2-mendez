@@ -6,7 +6,6 @@ import java.util.List;
 public class Participante implements IParticipante {
 
 	private String nombre;
-	private Boolean puedeParticipar;
 	private ServidorDeJuego servidor;
 	private List<String> notificaciones;
 	private List<String> preguntas;
@@ -24,6 +23,7 @@ public class Participante implements IParticipante {
 		this.preguntas = preguntas;
 	}
 	
+	@Override
 	public void contestarPregunta(String respuesta) throws Exception {
 		if (this.servidor == null) {
 			System.out.println("El/La participante no se unio a ninguna partida");
@@ -34,6 +34,7 @@ public class Participante implements IParticipante {
 		}
 	}
 	
+	@Override
 	public void unirseAPartida(ServidorDeJuego servidor) throws Exception {
 		this.servidor.agregarParticipante(this);
 		this.servidor = servidor;

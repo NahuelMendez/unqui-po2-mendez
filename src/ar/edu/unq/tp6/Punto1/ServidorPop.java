@@ -2,24 +2,33 @@ package ar.edu.unq.tp6.Punto1;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
-public class ServidorPop implements IServidor {
+public class ServidorPop implements IServidor, IPop {
+	
+	private Map<ClienteEMail, ArrayList<Correo>> usuariosRegistrados;
 
-	public List<Correo> recibirNuevos(String user, String pass) {
+	public List<Correo> recibirNuevos(ClienteEMail usuario) {
 		List<Correo> retorno = new ArrayList<Correo>();
-	  //Verificar autenticidad de usuario.
-		//obtener emails Nuevos del usuario.
-		//asignar a retorno la lista de los nuevos e-mails.
+	    if(elUsuarioEstaRegistrado(usuario)) {
+	    	retorno = this.usuariosRegistrados.get(usuario);
+	    }
 		return retorno;
 	}
 
-	public void conectar(String nombreUsuario, String passusuario) {
-	   //Verifica que el usuario sea valido y establece la conexion.
-		
+	private Boolean elUsuarioEstaRegistrado(ClienteEMail usuario) {
+		return this.usuariosRegistrados.keySet().contains(usuario);
+	}
+
+	public void conectar(ClienteEMail usuario) throws Exception {
+		if (elUsuarioEstaRegistrado(usuario)) {
+		   throw new Exception("El usuario es invalido");
+		}
 	}
 
 	public void enviar(Correo correo) {
-      //realiza lo necesario para enviar el correo.		
+		// hace lo necesario para enviar el correo
 	}
 
 	@Override

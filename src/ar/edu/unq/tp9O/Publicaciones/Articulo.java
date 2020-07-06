@@ -1,5 +1,8 @@
 package ar.edu.unq.tp9O.Publicaciones;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Articulo {
 	
 	private String titulo;
@@ -40,6 +43,17 @@ public class Articulo {
 	
 	public String getPalabraClave() {
 		return this.palabraClave;
+	}
+
+	public List<String> getDatosRelevantes() {
+		List<String> datosRelevantes = new ArrayList<String>();
+		datosRelevantes.add(this.getAutor());
+		datosRelevantes.add(this.getFiliacion());
+		datosRelevantes.add(this.getLugarDePublicacion());
+		datosRelevantes.add(this.getPalabraClave());
+		datosRelevantes.add(this.getTipo());
+		datosRelevantes.add(this.getTitulo());
+		return datosRelevantes;
 	}
 	
 }

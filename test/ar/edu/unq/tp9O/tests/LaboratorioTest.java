@@ -9,21 +9,21 @@ import org.mockito.Mock;
 import ar.edu.unq.tp9O.Publicaciones.Articulo;
 import ar.edu.unq.tp9O.Publicaciones.Laboratorio;
 import ar.edu.unq.tp9O.Publicaciones.SistemaBibliografico;
-import ar.edu.unq.tp9O.Publicaciones.TemaInteresTipo;
+
 
 import static org.mockito.Mockito.*;
+
+import java.util.Set;
 
 class LaboratorioTest {
 
 	private Laboratorio laboratorio;
 	@Mock private SistemaBibliografico sistema;
 	@Mock private Articulo articulo;
-	@Mock private TemaInteresTipo tipoCientifico;
 	
 	@BeforeEach
 	public void setUp() {
 		sistema = mock(SistemaBibliografico.class);
-		tipoCientifico = mock(TemaInteresTipo.class);
 		laboratorio = new Laboratorio(sistema);
 		articulo = mock(Articulo.class);
 	}
@@ -36,9 +36,10 @@ class LaboratorioTest {
 	
 	@Test
 	void test_UnLaboratorioSeSuscribeAUnSistema() {
-		laboratorio.suscribirseAlSistema(tipoCientifico);
-		verify(sistema).agregarObserver(laboratorio, tipoCientifico);
+		laboratorio.suscribirseAlSistema(Set.of("Smalltalk"));
+		verify(sistema).agregarSuscriptor(laboratorio, Set.of("Smalltalk"));
 	}
+	
 	
 	
 	

@@ -79,6 +79,16 @@ class BancoTest {
 		assertEquals(20000, creditoMartin);
 		assertEquals(40000, creditoPepe);
 	}
+	
+	@Test
+	void test007_unBancoTiene60000PesosDeMontoTotalADesembolsar() {
+		banco.agregarCliente(martin);
+		banco.agregarCliente(pepe);
+		banco.registrarSolicitudes();
+		banco.evaluarSolicitudesPendientes();
+		Integer montoTotal = banco.getMontoTotalADesembolsar();
+		assertEquals(60000, montoTotal);
+	}
 
 }
 

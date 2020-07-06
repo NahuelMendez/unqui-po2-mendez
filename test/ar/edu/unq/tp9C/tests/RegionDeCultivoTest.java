@@ -4,9 +4,9 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 
-import ar.edu.unq.tp9C.RegionDeCultivo;
-import ar.edu.unq.tp9C.Soja;
-import ar.edu.unq.tp9C.Trigo;
+import ar.edu.unq.tp9C.cultivos.RegionDeCultivo;
+import ar.edu.unq.tp9C.cultivos.Soja;
+import ar.edu.unq.tp9C.cultivos.Trigo;
 
 class RegionDeCultivoTest {
 

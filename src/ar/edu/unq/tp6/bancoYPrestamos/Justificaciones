@@ -1,0 +1,20 @@
+Justificaciones
+
+	♦ Cliente tiene como dependencia una abstraccion que es la clase abstracta SolicitudDeCredito
+	de esta manera se cumple con el principio de inversion de dependencias.
+	
+	♦ Las variables de todas las clases estan en privado. Esto nos garantiza que podemos extender funcionalidades
+	sin modificar a clases inesperadas. Tambien evitamos tener dependencias ocultas que podrian perjudicar
+	directamente en el funcionamiento del sistema
+	
+	♦ Banco tambien depende de la abstraccion de solicitudDeCredito, esto le permite poder interactuar con ellas
+	sin necesidad de saber absolutamente nada de las mismas.
+	
+	♦ La jerarquia de solicitud de credito nos facilita la extension del programa. Si en un futuro queremos agregar
+	mas tipos de solicitud de credito no hara mas que extender la clase abstracta y redefinir el metodo chequarAprobacion
+	
+	♦ Se creo la clase PropiedadInmobiliaria para que un cliente no tenga que estar calculando su valor fiscal, esta
+	clase es una composicion de cliente y alterara o no los requisitos de aprobacion de la solicitud de credito que solicite
+	
+	
+

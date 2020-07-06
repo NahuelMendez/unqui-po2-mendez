@@ -4,7 +4,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 
-import ar.edu.unq.tp9C.Soja;
+import ar.edu.unq.tp9C.cultivos.Soja;
 
 class SojaTest {
 

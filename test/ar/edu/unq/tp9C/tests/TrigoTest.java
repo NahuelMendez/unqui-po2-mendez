@@ -4,7 +4,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 
-import ar.edu.unq.tp9C.Trigo;
+import ar.edu.unq.tp9C.cultivos.Trigo;
 
 class TrigoTest {
 
