@@ -5,8 +5,6 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import org.mockito.Mockito.*;
-
 import ar.edu.unq.tp9C.cultivos.RegionDeCultivo;
 import ar.edu.unq.tp9C.cultivos.SistemaDeProduccion;
 import ar.edu.unq.tp9C.cultivos.Soja;

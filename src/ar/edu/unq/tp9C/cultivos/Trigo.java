@@ -1,6 +1,6 @@
 package ar.edu.unq.tp9C.cultivos;
 
-public class Trigo extends Cultivo {
+public class Trigo implements ICultivo {
 
 	public Integer gananciaAnual() {
 		return 300;

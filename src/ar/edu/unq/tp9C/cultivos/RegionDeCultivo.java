@@ -3,28 +3,28 @@ package ar.edu.unq.tp9C.cultivos;
 import java.util.ArrayList;
 import java.util.List;
 
-public class RegionDeCultivo extends Cultivo {
+public class RegionDeCultivo implements ICultivo {
 	
-	private List<Cultivo> cultivos;
+	private List<ICultivo> cultivos;
 
 	public RegionDeCultivo() {
-		cultivos = new ArrayList<Cultivo>(4);
+		cultivos = new ArrayList<ICultivo>(4);
 	}
 	
 	@Override
 	public Integer gananciaAnual() {
 		Integer resultado = 0;
-		for (Cultivo cultivo : cultivos) {
+		for (ICultivo cultivo : cultivos) {
 			resultado += cultivo.gananciaAnual();
 		}
 		return resultado / 4;
 	}
 	
-	public List<Cultivo> getCultivos(){
+	public List<ICultivo> getCultivos(){
 		return this.cultivos;
 	}
 	
-	public void agregarCultivo(Cultivo cultivo) {
+	public void agregarCultivo(ICultivo cultivo) {
 		this.cultivos.add(cultivo);
 	}
 

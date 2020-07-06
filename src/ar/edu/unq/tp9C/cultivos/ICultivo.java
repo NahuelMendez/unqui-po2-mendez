@@ -1,6 +1,6 @@
 package ar.edu.unq.tp9C.cultivos;
 
-public abstract class Cultivo {
+public interface ICultivo {
 
 	public abstract Integer gananciaAnual();
 	

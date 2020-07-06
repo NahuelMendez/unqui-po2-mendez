@@ -4,25 +4,25 @@ import java.util.ArrayList;
 
 public class SistemaDeProduccion {
 	
-	private ArrayList<Cultivo> tierrasProductivas;
+	private ArrayList<ICultivo> tierrasProductivas;
 	
 	public SistemaDeProduccion() {
-		tierrasProductivas = new ArrayList<Cultivo>();
+		tierrasProductivas = new ArrayList<ICultivo>();
 	}
 	
-	public ArrayList<Cultivo> getTierrasProductivas(){
+	public ArrayList<ICultivo> getTierrasProductivas(){
 		return this.tierrasProductivas;
 	}
 	
 	public Integer calcularGananciasDeTierrasProductivas() {
 		Integer ganancias = 0;
-		for (Cultivo cultivo : tierrasProductivas) {
+		for (ICultivo cultivo : tierrasProductivas) {
 			ganancias += cultivo.gananciaAnual();
 		}
 		return ganancias;
 	}
 	
-	public void agregarCultivoAProduccion(Cultivo cultivo) {
+	public void agregarCultivoAProduccion(ICultivo cultivo) {
 		this.tierrasProductivas.add(cultivo);
 	}
 
